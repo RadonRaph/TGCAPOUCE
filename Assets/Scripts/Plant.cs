@@ -18,6 +18,16 @@ public class Plant
     public Plant()
     {
         branchTex = 0;
-        branchColor = Color.
+        branchColor = new Color(99 / 255f, 62 / 255f, 24 / 255f);
+
+
+        leaveTex = 0;
+        leaveColor = new Color(24 / 255f, 99 / 255f, 42 / 255f);
+
+        flowerTex = 0;
+        flowerColor = new Color(211 / 255f, 217 / 255f, 100 / 255f);
+
+        plantCode = "DEFAULT";
+
     }
 }

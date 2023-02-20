@@ -23,6 +23,7 @@ public class GardenManager : MonoBehaviour
         
 
         //Load slots data from server
+        LoadData();
     }
 
 
@@ -38,10 +39,11 @@ public class GardenManager : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 GameObject obj = Instantiate(_slotPrefab, transform);
-                obj.transform.localPosition = new Vector3((int) (-width / 2f + x), 0, (int) (-height / 2f + y));
+                obj.transform.localPosition = new Vector3(Mathf.CeilToInt (-width / 2f + x), 0, Mathf.CeilToInt(-height / 2f + y));
 
                 slots[x, y] = obj.GetComponent<Slot>();
-                slots[x,y].plant = 
+                //load Plant here
+                slots[x, y].Initialize();
             }
         }
 
