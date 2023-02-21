@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class Slot : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Slot : MonoBehaviour
     private static readonly int BtnColor = Shader.PropertyToID("_Color");
     private bool _isHovered = false;
 
+    private GameObject _currentPlantObjet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,12 @@ public class Slot : MonoBehaviour
     public void Initialize()
     {
         //Instantiate Plant Prefab
+    }
+
+    [Button("BuildPlant")]
+    public void ConstructPlant()
+    {
+        _currentPlantObjet = PlantManager.instance.BuildPlant(plant, Vector3.zero, transform);
     }
 
     public void ChangePlant(Plant newPlant)
