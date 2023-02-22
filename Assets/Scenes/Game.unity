@@ -693,7 +693,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
 --- !u!114 &1149974953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,16 +908,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branchTexs:
-  - tex: {fileID: 2800000, guid: 8394787e2a2c9c84bab1b3d5bfb856bf, type: 3}
+  - tex: {fileID: 2800000, guid: 9cff83c6146cd20498ff116174ffd667, type: 3}
     scaleMinMax: {x: 1, y: 1}
     baked: 1
+    leavesPoints:
+    - origin: {x: 0.19726562, y: 0.328125, z: 0}
+      direction: {x: 0.70710677, y: 0.70710677, z: 0}
+    - origin: {x: 0.36328125, y: 0.123046875, z: 0}
+      direction: {x: 0.70710677, y: 0.70710677, z: 0}
     flowerPoints:
-    - {x: -0.29882812, y: -0.17773438, z: 0}
-    - {x: -0.1953125, y: 0.29296875, z: 0}
-    - {x: 0.26171875, y: -0.20703125, z: 0}
-    - {x: 0.33398438, y: 0.3125, z: 0}
-  leavesTexs: []
-  flowerTexs: []
+    - {x: -0.015625, y: 0.47070312, z: 0}
+  leavesTexs:
+  - tex: {fileID: 2800000, guid: 6d7f3b33029bab9409cad5e7420c26ab, type: 3}
+    scaleMinMax: {x: 1, y: 1}
+    baked: 1
+    offset: {x: -0.00390625, y: 0.46289062, z: 0}
+  flowerTexs:
+  - tex: {fileID: 2800000, guid: 5237e78b33b2e0e41b845d9a37699162, type: 3}
+    scaleMinMax: {x: 1, y: 1}
+    baked: 1
+    offset: {x: -0.001953125, y: 0.36914062, z: 0}
   palette: []
 --- !u!4 &1315741496
 Transform:
