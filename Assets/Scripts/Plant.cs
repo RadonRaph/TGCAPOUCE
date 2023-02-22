@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,12 @@ public class Plant
     public int flowerTex;
     public Color flowerColor;
 
+    public Guid plantId;
     public string plantCode;
+    public Guid ownerId;
+    public string nickname;
+    public float creationTimestamp;
+    public int exchangesCount;
 
     public Plant()
     {
