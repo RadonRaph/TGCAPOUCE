@@ -7,13 +7,13 @@ using UnityEngine;
 public class Plant
 {
     public int branchTex;
-    public Color branchColor;
+    public int branchColor;
 
     public int leaveTex;
-    public Color leaveColor;
+    public int leaveColor;
 
     public int flowerTex;
-    public Color flowerColor;
+    public int flowerColor;
 
     public Guid plantId;
     public string plantCode;
@@ -24,15 +24,16 @@ public class Plant
 
     public Plant()
     {
+
         branchTex = 0;
-        branchColor = new Color(99 / 255f, 62 / 255f, 24 / 255f);
+        branchColor = 0;
 
 
         leaveTex = 0;
-        leaveColor = new Color(24 / 255f, 99 / 255f, 42 / 255f);
+        leaveColor = 0;
 
         flowerTex = 0;
-        flowerColor = new Color(211 / 255f, 217 / 255f, 100 / 255f);
+        flowerColor = 0;
 
         plantCode = "DEFAULT";
 

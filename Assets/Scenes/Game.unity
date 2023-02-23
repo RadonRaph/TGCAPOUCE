@@ -394,6 +394,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479739278}
   m_CullTransparentMesh: 1
+--- !u!1 &504648586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504648588}
+  - component: {fileID: 504648587}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &504648587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504648586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7e2941c642b2545a5aecc59752d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginNicknameInput: {fileID: 0}
+  loginPassInput: {fileID: 0}
+  registerNicknameInput: {fileID: 0}
+  registerPassInput: {fileID: 0}
+  registerPlantName: {fileID: 0}
+  webApi: {fileID: 0}
+  plantManager: {fileID: 0}
+--- !u!4 &504648588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504648586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.962099, y: 5.6096783, z: 25.849567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575834477
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,27 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37935e9cc98f99649918076f4dd20f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  branchTexs:
-  - tex: {fileID: 2800000, guid: 9cff83c6146cd20498ff116174ffd667, type: 3}
-    scaleMinMax: {x: 1, y: 1}
-    baked: 1
-    leavesPoints:
-    - origin: {x: 0.19726562, y: 0.328125, z: 0}
-      direction: {x: 0.70710677, y: 0.70710677, z: 0}
-    - origin: {x: 0.36328125, y: 0.123046875, z: 0}
-      direction: {x: 0.70710677, y: 0.70710677, z: 0}
-    flowerPoints:
-    - {x: -0.015625, y: 0.47070312, z: 0}
-  leavesTexs:
-  - tex: {fileID: 2800000, guid: 6d7f3b33029bab9409cad5e7420c26ab, type: 3}
-    scaleMinMax: {x: 1, y: 1}
-    baked: 1
-    offset: {x: -0.00390625, y: 0.46289062, z: 0}
-  flowerTexs:
-  - tex: {fileID: 2800000, guid: 5237e78b33b2e0e41b845d9a37699162, type: 3}
-    scaleMinMax: {x: 1, y: 1}
-    baked: 1
-    offset: {x: -0.001953125, y: 0.36914062, z: 0}
+  info: {fileID: 11400000, guid: 0bb6709be44f99c4d9db528068658ddb, type: 2}
   palette: []
 --- !u!4 &1315741496
 Transform:

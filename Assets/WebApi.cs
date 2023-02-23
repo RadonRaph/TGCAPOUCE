@@ -1,24 +1,46 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 
 public class WebApi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Login(string nickname, string password, Action callbackIfSuccess, Action callbackIfFail)
     {
-        
+        Hash128 hashedPass = new Hash128();
+        hashedPass.Append("PolyPollen");
+        hashedPass.Append(69420);
+        hashedPass.Append(password);
+
+        StartCoroutine(TryLogin(nickname, password, callbackIfSuccess, callbackIfFail));
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator TryLogin(string nickname, string passwordHash, Action goodcallback, Action failedcallback)
     {
-        
-    }
+        WWWForm loginForm = new WWWForm();
 
-    public void Register(string nickname, string password, Plant selectedPlant, string plantNickname, Action callback)
+        loginForm.AddField("nickname", nickname);
+        loginForm.AddField("passwordHash", passwordHash);
+
+        UnityWebRequest www = UnityWebRequest.Post("https://raccoonlabs.fr/polypollen/login.php", loginForm);
+
+        yield return www.SendWebRequest();
+        
+        if (www.result != UnityWebRequest.Result.Success) {
+            Debug.Log(www.error);
+            failedcallback.Invoke();
+        }
+        else {
+            Debug.Log("Account created!");
+            goodcallback.Invoke();
+        }
+    }
+        
+
+    public void Register(string nickname, string password, Plant selectedPlant, string plantNickname, Action callbackSuccess, Action callbackFail )
     {
         
         
@@ -36,11 +58,11 @@ public class WebApi : MonoBehaviour
         
         acc.plants.Add(selectedPlant);
 
-        StartCoroutine(TryRegister(acc, selectedPlant));
+        StartCoroutine(TryRegister(acc, selectedPlant, callbackSuccess, callbackFail));
 
     }
 
-    public IEnumerator TryRegister(Account acc, Plant selectedPlant)
+    public IEnumerator TryRegister(Account acc, Plant selectedPlant, Action success, Action fail)
     {
 
         WWWForm accForm = new WWWForm();
@@ -57,8 +79,10 @@ public class WebApi : MonoBehaviour
         
         if (www.result != UnityWebRequest.Result.Success) {
             Debug.Log(www.error);
-        }
-        else {
+            
+            fail.Invoke();
+            yield break;
+        }else {
             Debug.Log("Account created!");
         }
         
@@ -74,8 +98,9 @@ public class WebApi : MonoBehaviour
         
         if (www2.result != UnityWebRequest.Result.Success) {
             Debug.Log(www2.error);
-        }
-        else {
+            fail.Invoke();
+            yield break;
+        }else {
             Debug.Log("Garden created!");
         }
         
@@ -94,10 +119,16 @@ public class WebApi : MonoBehaviour
         
         if (www3.result != UnityWebRequest.Result.Success) {
             Debug.Log(www3.error);
-        }
-        else {
+            fail.Invoke();
+            yield break;
+        }else {
             Debug.Log("Plant created!");
         }
+        
+        
+        //NOT TO BE THERE:
+        PlayerPrefs.SetString("PlayerGUID", acc.guid.ToString());
+        success.Invoke();
     }
 
     Account CreateAccount(string nickname, string passwordHashed)
