@@ -28,13 +28,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6388650374851137344}
   - {fileID: 6388650375146854787}
   - {fileID: 6388650375457203439}
   - {fileID: 6388650373625795328}
   - {fileID: 6388650373510246175}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6388650373485676241
 GameObject:
@@ -504,7 +503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6388650373625795328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -512,7 +511,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6388650373625795356}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -880,7 +879,7 @@ GameObject:
   - component: {fileID: 6388650373751705831}
   - component: {fileID: 6388650373751705830}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnOpenRegister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -989,9 +988,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6388650374851137345}
-        m_TargetAssemblyTypeName: ConnexionManager, Assembly-CSharp
-        m_MethodName: OpenSignUpCanvas
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1198,9 +1197,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6388650374851137345}
-        m_TargetAssemblyTypeName: ConnexionManager, Assembly-CSharp
-        m_MethodName: OpenSignUpCanvas
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1983,7 +1982,7 @@ GameObject:
   - component: {fileID: 6388650374371264659}
   - component: {fileID: 6388650374371264658}
   m_Layer: 5
-  m_Name: Plant1 (3)
+  m_Name: Plant4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2182,7 +2181,7 @@ GameObject:
   - component: {fileID: 6388650374398345920}
   - component: {fileID: 6388650374398345923}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnOpenLogin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,9 +2290,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6388650374851137345}
-        m_TargetAssemblyTypeName: ConnexionManager, Assembly-CSharp
-        m_MethodName: OpenLoginCanvas
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2505,7 +2504,7 @@ GameObject:
   - component: {fileID: 6388650374559518602}
   - component: {fileID: 6388650374559518597}
   m_Layer: 5
-  m_Name: Plant1 (2)
+  m_Name: Plant3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3374,7 +3373,7 @@ GameObject:
   - component: {fileID: 6388650374719236899}
   - component: {fileID: 6388650374719236898}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnSubmitLogin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3483,9 +3482,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6388650374851137345}
-        m_TargetAssemblyTypeName: ConnexionManager, Assembly-CSharp
-        m_MethodName: Login
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TryLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3738,7 +3737,7 @@ GameObject:
   - component: {fileID: 6388650374839705238}
   - component: {fileID: 6388650374839705233}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnOpenPantSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3847,9 +3846,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6388650374851137345}
-        m_TargetAssemblyTypeName: ConnexionManager, Assembly-CSharp
-        m_MethodName: OpenSignUpPlantSelectionCanvas
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenPlantSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3859,53 +3858,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &6388650374851137347
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6388650374851137344}
-  - component: {fileID: 6388650374851137345}
-  m_Layer: 0
-  m_Name: ConnexionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6388650374851137344
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6388650374851137347}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1226458425823046848}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6388650374851137345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6388650374851137347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0dd4baabc60b6e4b8106f41a98fb18f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SignUpCanvas: {fileID: 6388650375457203435}
-  LoginCanvas: {fileID: 6388650375146854815}
-  SignUpPlantSelectionCanvas: {fileID: 6388650373625795356}
 --- !u!1 &6388650374857623107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3995,7 +3947,7 @@ GameObject:
   - component: {fileID: 6388650374892560018}
   - component: {fileID: 6388650374892560237}
   m_Layer: 5
-  m_Name: Plant1 (1)
+  m_Name: Plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4683,7 +4635,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6388650375165521485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6388650375185653147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5681,7 +5645,7 @@ GameObject:
   - component: {fileID: 6388650375354374098}
   - component: {fileID: 6388650375354374061}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnSubmitRegister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5790,9 +5754,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6388650374851137345}
-        m_TargetAssemblyTypeName: ConnexionManager, Assembly-CSharp
-        m_MethodName: SignUp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TryRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6018,12 +5982,12 @@ GameObject:
   - component: {fileID: 6388650375457203433}
   - component: {fileID: 6388650375457203432}
   m_Layer: 5
-  m_Name: SignUpCanvas
+  m_Name: RegisterCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6388650375457203439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6031,7 +5995,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6388650375457203435}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
