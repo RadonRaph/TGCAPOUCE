@@ -76,13 +76,14 @@ public class WebApi : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Post("https://raccoonlabs.fr/polypollen/register.php", accForm);
 
         yield return www.SendWebRequest();
-        
+        Debug.Log(www.downloadHandler.text);
         if (www.result != UnityWebRequest.Result.Success) {
             Debug.Log(www.error);
             
             fail.Invoke();
             yield break;
         }else {
+            
             Debug.Log("Account created!");
         }
         
@@ -95,6 +96,7 @@ public class WebApi : MonoBehaviour
         UnityWebRequest www2 = UnityWebRequest.Post("https://raccoonlabs.fr/polypollen/gardenCreate.php", gardenForm);
 
         yield return www2.SendWebRequest();
+        Debug.Log(www2.downloadHandler.text);
         
         if (www2.result != UnityWebRequest.Result.Success) {
             Debug.Log(www2.error);
@@ -110,12 +112,13 @@ public class WebApi : MonoBehaviour
         plantForm.AddField("code", selectedPlant.plantCode);
         plantForm.AddField("owner", selectedPlant.ownerId.ToString());
         plantForm.AddField("nickname", selectedPlant.nickname);
-        plantForm.AddField("exchangesCount", selectedPlant.exchangesCount);
+        plantForm.AddField("exchangesCount", 0);
 
         
         UnityWebRequest www3 = UnityWebRequest.Post("https://raccoonlabs.fr/polypollen/plantCreate.php", plantForm);
 
         yield return www3.SendWebRequest();
+        Debug.Log(www3.downloadHandler.text);
         
         if (www3.result != UnityWebRequest.Result.Success) {
             Debug.Log(www3.error);
@@ -135,7 +138,7 @@ public class WebApi : MonoBehaviour
     {
         Account acc = new Account();
         
-        acc.nickname = name;
+        acc.nickname = nickname;
         acc.passwordHash = passwordHashed;
         acc.guid = Guid.NewGuid();
         acc.garden = new Garden();
