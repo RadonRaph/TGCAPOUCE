@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 8af3eed71066fbc44a6483db797392f0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Helvetica Neue LT Com
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 049dc9547e3adc9478582f8c22b77eab, type: 3}
+  - {fileID: 12800000, guid: 2838922c226f1b943adc3499d2275416, type: 3}
+  - {fileID: 12800000, guid: d633d0da9a8331c438a93f55a6e0c4e5, type: 3}
+  - {fileID: 12800000, guid: f7cc10e3e1538ee48a40693b238379a8, type: 3}
+  - {fileID: 12800000, guid: 188154a419982654aa0ab4ae6eec014a, type: 3}
+  - {fileID: 12800000, guid: 211aa19d390e93c419c546228936b776, type: 3}
+  - {fileID: 12800000, guid: b76b3c88f5401434799ddb0008284560, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public InputField loginNicknameInput;
-    public InputField loginPassInput;
-    
-    
-    public InputField registerNicknameInput;
-    public InputField registerPassInput;
-    public InputField registerPlantName;
+    public GameObject SignUpCanvas, LoginCanvas, SignUpPlantSelectionCanvas, CanvasBackground, GameCanvas;
 
+    public TMP_InputField loginNicknameInput;
+    public TMP_InputField loginPassInput;
+    
+    
+    public TMP_InputField registerNicknameInput;
+    public TMP_InputField registerPassInput;
+    public TMP_InputField registerPlantName;
+
+    private string registerNicknameInputTemp, registerPassInputTemp;
 
     public WebApi webApi;
     public PlantManager plantManager;
@@ -30,6 +34,9 @@ public class UIManager : MonoBehaviour
         {
             OpenLogin();
         }
+
+        SignUpCanvas.SetActive(false);
+        SignUpPlantSelectionCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,9 +46,12 @@ public class UIManager : MonoBehaviour
     }
 
 
-    void OpenLogin()
+    public void OpenLogin()
     {
-        
+        LoginCanvas.SetActive(true);
+        SignUpCanvas.SetActive(false);
+        CanvasBackground.SetActive(true);
+        GameCanvas.SetActive(false);
     }
 
     public void TryLogin()
@@ -56,11 +66,19 @@ public class UIManager : MonoBehaviour
 
     void LoginSuccess()
     {
-        
+        LoginCanvas.SetActive(false);
+        SignUpCanvas.SetActive(false);
+        SignUpPlantSelectionCanvas.SetActive(false);
+        CanvasBackground.SetActive(false);
+        GameCanvas.SetActive(true);
     }
 
     public void OpenRegister()
     {
+        LoginCanvas.SetActive(false);
+        SignUpPlantSelectionCanvas.SetActive(false);
+        SignUpCanvas.SetActive(true);
+
         if (generatedPlants == null)
         {
             generatedPlants = new Plant[4];
@@ -68,8 +86,15 @@ public class UIManager : MonoBehaviour
             generatedPlants[1] = plantManager.CreateBasePlant();
             generatedPlants[2] = plantManager.CreateBasePlant();
             generatedPlants[3] = plantManager.CreateBasePlant();
-            
         }
+    }
+
+    public void OpenPlantSelection()
+    {
+        SignUpCanvas.SetActive(false);
+        SignUpPlantSelectionCanvas.SetActive(true);
+        registerNicknameInputTemp = registerNicknameInput.text;
+        registerPassInputTemp = registerPassInput.text;
     }
 
     public void SelectPlant(int nb)
@@ -79,13 +104,17 @@ public class UIManager : MonoBehaviour
 
     public void TryRegister()
     {
-        webApi.Register(registerNicknameInput.text, registerPassInput.text, generatedPlants[_selectedPlant], registerPlantName.text, RegisterSuccess,RegisterFail);
+        webApi.Register(registerNicknameInputTemp, registerPassInputTemp, generatedPlants[_selectedPlant], registerPlantName.text, RegisterSuccess,RegisterFail);
     }
 
 
     public void RegisterSuccess()
     {
-        
+        LoginCanvas.SetActive(false);
+        SignUpCanvas.SetActive(false);
+        SignUpPlantSelectionCanvas.SetActive(false);
+        CanvasBackground.SetActive(false);
+        GameCanvas.SetActive(true);
     }
 
 
