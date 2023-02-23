@@ -134,8 +134,7 @@ public class LeafSpot
 [System.Serializable]
 public class BranchTextureInfo : TextureInfo
 {
-    public bool baked = false;
-    
+
 
     [SerializeField] public LeafSpot[] leavesPoints;
     [SerializeField] public Vector3[] flowerPoints;
