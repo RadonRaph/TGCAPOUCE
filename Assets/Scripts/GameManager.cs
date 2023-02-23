@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource ambMain, musicMain, sfxPlant;
 
     public bool isContructionMode = false;
     public LayerMask interactionMask;
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _selectedPlant = new Plant();
+        musicMain.Play();
+        ambMain.Play(); 
     }
 
     // Update is called once per frame
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (hit.transform.gameObject.CompareTag("Slot"))
                     {
+                        sfxPlant.Play();
                         Slot slot = hit.transform.gameObject.GetComponentInParent<Slot>();
                         
                         slot.ChangePlant(_selectedPlant);
