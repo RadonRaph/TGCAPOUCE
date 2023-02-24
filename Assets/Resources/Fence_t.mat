@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fence_t
-  m_Shader: {fileID: -6465566751694194690, guid: 7159510904cb4c4498fba0e46346b159,
+  m_Shader: {fileID: -6465566751694194690, guid: 942cc80e211db7247bd5d57e61204952,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
