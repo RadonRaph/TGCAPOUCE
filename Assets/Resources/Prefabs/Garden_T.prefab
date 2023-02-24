@@ -7007,7 +7007,7 @@ GameObject:
   - component: {fileID: 3412836346503943815}
   - component: {fileID: 3412836346503943814}
   m_Layer: 0
-  m_Name: Garden
+  m_Name: Garden_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
