@@ -57,7 +57,8 @@ public class WebApi : MonoBehaviour
         selectedPlant.nickname = plantNickname;
         selectedPlant.ownerId = acc.guid;
         selectedPlant.exchangesCount = 0;
-        
+
+        acc.garden.plantGrid[12] = selectedPlant;
         acc.plants.Add(selectedPlant);
 
         StartCoroutine(TryRegister(acc, selectedPlant, callbackSuccess, callbackFail));
@@ -93,7 +94,7 @@ public class WebApi : MonoBehaviour
         WWWForm gardenForm = new WWWForm();
 
         gardenForm.AddField("guid", acc.garden.guid.ToString());
-        gardenForm.AddField("plantGrid", acc.garden.plantGrid.GetString());
+        gardenForm.AddField("plantGrid", acc.garden.GetString());
         
         UnityWebRequest www2 = UnityWebRequest.Post("https://raccoonlabs.fr/polypollen/gardenCreate.php", gardenForm);
 
@@ -187,13 +188,27 @@ public class PlantList
 public class Garden
 {
     public Guid guid;
-    public PlantList plantGrid;
+    public Plant[] plantGrid;
     public float lastmodified;
 
     public Garden()
     {
         guid = Guid.NewGuid();
-        plantGrid = new PlantList();
+        plantGrid = new Plant[25];
+    }
+
+    public string GetString()
+    {
+        string t = "[";
+
+        for (int i = 0; i < 25; i++)
+        {
+            t += plantGrid[i].plantId;
+            t += "!";
+        }
+
+        t += "]";
+        return t;
     }
 }
 

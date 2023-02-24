@@ -13,14 +13,12 @@ public class GardenManager : MonoBehaviour
     public string playerCode;
 
     private GameObject _slotPrefab;
-    private Plant _dummyPlant;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         _slotPrefab = Resources.Load<GameObject>("Prefabs/Slot");
-        _dummyPlant = new Plant();
-        
+
 
         //Load slots data from server
         LoadData();

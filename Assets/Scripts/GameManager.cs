@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class GameManager : MonoBehaviour
     public bool isContructionMode = false;
     public LayerMask interactionMask;
 
+
+    public Account currentAccount;
+    public Dictionary<Guid, Garden> Gardens;
+    public Dictionary<Guid, Plant> Plants;
+
+
     private Plant _selectedPlant;
 
     private GameObject _lastHoveredGameobject;
@@ -16,6 +23,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _selectedPlant = new Plant();
+    }
+
+
+    void LoadData()
+    {
+        Gardens = new Dictionary<Guid, Garden>();
+        //LOAD DATA
     }
 
     // Update is called once per frame
