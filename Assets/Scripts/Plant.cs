@@ -24,6 +24,8 @@ public class Plant
 
     public Plant()
     {
+        
+        plantId = Guid.NewGuid();
 
         branchTex = 0;
         branchColor = 0;
@@ -37,5 +39,10 @@ public class Plant
 
         plantCode = "DEFAULT";
 
+    }
+
+    public Plant(string guid)
+    {
+        
     }
 }

@@ -14,7 +14,7 @@ public class WebApi : MonoBehaviour
         hashedPass.Append(69420);
         hashedPass.Append(password);
 
-        StartCoroutine(TryLogin(nickname, password, callbackIfSuccess, callbackIfFail));
+        StartCoroutine(TryLogin(nickname, hashedPass.ToString(), callbackIfSuccess, callbackIfFail));
 
     }
 
@@ -29,12 +29,14 @@ public class WebApi : MonoBehaviour
 
         yield return www.SendWebRequest();
         
-        if (www.result != UnityWebRequest.Result.Success) {
+        Debug.Log(www.downloadHandler.text);
+        
+        if (www.result != UnityWebRequest.Result.Success || www.downloadHandler.text == "Error") {
             Debug.Log(www.error);
             failedcallback.Invoke();
         }
         else {
-            Debug.Log("Account created!");
+            Debug.Log("Sucessfull login!");
             goodcallback.Invoke();
         }
     }
