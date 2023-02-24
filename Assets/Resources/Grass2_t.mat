@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fence
-  m_Shader: {fileID: -6465566751694194690, guid: 7159510904cb4c4498fba0e46346b159,
+  m_Name: Grass2_t
+  m_Shader: {fileID: -6465566751694194690, guid: 7161aaf4b3e910f49bca8cf6160504b9,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a46666f6760f47f4bb0900f2c92b0ab7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -45,12 +45,13 @@ Material:
     - _CurveAmount: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _alphacutout: 0
     - _x: 1
     - _y: 1
     m_Colors:
-    - _MainColor: {r: 0.9137255, g: 0.8862745, b: 0.85882354, a: 1}
+    - _MainColor: {r: 0.56697226, g: 0.82720196, b: 0.8773585, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8236332928772020923
+--- !u!114 &5320324720251425185
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
